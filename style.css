@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+   --btn: 350; 
+}
+
+    html {
+    scroll-behavior: smooth !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    }
+
+
+.btn-3d {
+    position: relative;
+    background: pink;
+    border: none;
+    color: #cc313d;
+/*     font-weight: 100; */
+    padding: 15px 24px;
+    font-size: 1.4rem;
+    box-shadow: -6px 6px 0 hsl(var(--btn), 100%, 73%);
+    outline: none;
+  }
+  
+    .btn-3d:hover {
+      background: hsl(var(--btn), 100%, 88%);
+    }
+  
+    .btn-3d:active {
+      background: hsl(var(--btn), 100%, 83%);
+      top: 3px;
+      left: -3px;
+      box-shadow: -3px 3px 0 hsl(var(--btn), 100%, 73%);
+    }
+  
+    .btn-3d::before {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 0;
+      width: 0;
+      /* border width needs to be size of the element's box shadow */
+      border: solid 6px transparent;
+  
+      /* border width needs to be size of the element's box shadow */
+      border-right: solid 6px hsl(var(--btn), 100%, 73%);
+  
+      /* no width for left, makes measurements easier */
+      border-left-width: 0px;
+  
+      background: none;
+      top: 0px;
+  
+      /* needs to be the same size as border width */
+      left: -6px;
+    }
+  
+    .btn-3d::after {
+      position: absolute;
+      display: block;
+      content: "";
+      height: 0;
+      width: 0;
+      border: solid 6px transparent;
+      border-top: solid 6px hsl(var(--btn), 100%, 73%);
+      border-bottom-width: 0px;
+      background: none;
+      right: 0;
+      bottom: -6px;
+    }
+  
+      .btn-3d:active::before {
+        border: solid 3px transparent;
+        border-right: solid 3px hsl(var(--btn), 100%, 73%);
+        border-left-width: 0px;
+        left: -3px;
+      }
+  
+      .btn-3d:active::after {
+        border: solid 3px transparent;
+        border-top: solid 3px hsl(var(--btn), 100%, 73%);
+        border-bottom-width: 0px;
+        bottom: -3px;
+      }
+      /* End: 3D button */
+
+
+
+/*   body{
+   -webkit-touch-callout: none;
+   -webkit-user-select: none; 
+   -moz-user-select: none;    
+   -ms-user-select: none;     
+   -o-user-select: none;
+    user-select: none;
+}
+ */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 48px;
+    background-color: #151853;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav > li {
+    display: inline-block;
+}
+
+#nav li {
+    position: relative;
+    list-style-type: none;
+}
+
+#nav > li > a {
+/*     color:   #ffa500; */
+  color: #ffa500;
+    text-transform: uppercase;
+}
+
+/* Định dạng thanh điều hướng chính */
+#nav li a {
+    display: block;
+    padding: 0 24px;
+    line-height: 48px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+#nav li:hover .subnav {
+    display: block;
+}
+
+/* Đổi màu khi chạm vào */
+#nav > li:hover > a ,
+#nav .subnav li:hover a{
+/*     color: 	#E6E6FA; */
+    color: #cc313d;
+/*     background-color:  #ffd1d1; */
+    background-color: #f7c5cc;
+/*     border-radius: 0 0 15px 15px; */
+}
+
+
+#nav .subnav li:hover .test{
+/*   color: #000000;
+    background-color:  #ffd1d1; */
+    border-radius: 0 0 15px 15px;
+  /*     color: 	#E6E6FA; */
+    color: #cc313d;
+/*     background-color:  #ffd1d1; */
+    background-color: #f7c5cc;
+/*     border-radius: 0 0 15px 15px; */
+    
+}
+
+#nav .nav-sort-down {
+    font-size: 38px;
+}
+
+/* Định dạng thanh điều hướng phụ */
+#nav .subnav {
+    position: absolute;
+    display: none;
+    min-width: 200px;
+/*     box-shadow: 0 0 12px rgba(0 , 0 , 0 , 0.3); */
+/*     background-color:  #7A3E48; */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border-radius: 0 0 15px 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    transition: 1s;
+    backface-visibility: hidden;
+}
+
+#nav .subnav a {
+    color: #ffa500 ;
+}
+
+#header .search-btn {
+    float: right;
+    padding: 0 21px ;
+}
+
+img {
+    
+}
+
+img:hover {
+  opacity: 0.7;
+/*   cursor: none; */
+/*   border-radius:  15px; */
+}
+
+
